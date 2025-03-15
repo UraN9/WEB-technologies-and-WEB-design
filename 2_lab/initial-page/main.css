@@ -1,0 +1,26 @@
+h1, h2 {
+    text-align: center;
+    font-weight: bold;
+    color: blue;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.image-container img {
+    width: 300px;
+    margin-right: 8px;
+}
+
+.green {
+    color: green;
+}
+
+.blue {
+    color: blue;
+}
+
+.red {
+    color: red;
+}
