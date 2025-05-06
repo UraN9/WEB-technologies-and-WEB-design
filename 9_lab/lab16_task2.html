@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна №16 — Завдання 2</title>
+</head>
+<body>
+    <h1>Обробка форм та подій</h1>
+
+    <h2>Привітання користувача</h2>
+    <form>
+        <input type="text" id="userName" placeholder="Ваше ім'я">
+        <button type="button" onclick="greetUser()">Привітати</button>
+    </form>
+
+    <h2>Виведення при введенні</h2>
+    <input type="text" id="inputField" oninput="showInput()">
+
+    <h2>Відправлення форми без перезавантаження</h2>
+    <form onsubmit="handleSubmit(event)">
+        <input type="text" id="dataInput">
+        <button type="submit">Надіслати</button>
+    </form>
+
+    <script>
+        function greetUser() {
+            let name = document.getElementById("userName").value;
+            alert("Вітаю, " + name + "!");
+        }
+
+        function showInput() {
+            let text = document.getElementById("inputField").value;
+            console.log("Ви ввели: " + text);
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault(); 
+            let value = document.getElementById("dataInput").value;
+            alert("Введено: " + value);
+        }
+    </script>
+</body>
+</html>

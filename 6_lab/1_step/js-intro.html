@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Знайомство з JS</title>
+    <style>
+        .gallery {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .gallery img {
+            max-width: 300px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Моя галерея зображень</h1>
+
+    <div class="gallery" id="gallery">
+        <img id="currentPhoto" src="images/porsche1.jpg" alt="Фото" />
+    </div>
+
+    <button onclick="ShowNextPhoto()">Змінити зображення</button>
+    <button onclick="addImage()">Додати зображення</button>
+
+    <script>
+        let images = [
+            "images/porsche1.jpg",
+            "images/porsche2.jpg",
+            "images/porsche3.jpg"
+        ];
+        let currentIndex = 0;
+
+        function ShowNextPhoto() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById("currentPhoto").src = images[currentIndex];
+        }
+
+        function addImage() {
+            const gallery = document.getElementById("gallery");
+
+            // Перевірити, які зображення вже є в галереї (по src)
+            let existingSources = Array.from(gallery.children).map(img => img.src);
+
+            // Додати ті, яких ще нема
+            for (let i = 0; i < images.length; i++) {
+                // Перевіряємо, чи вже є таке зображення
+                if (!existingSources.some(src => src.includes(images[i]))) {
+                    const img = document.createElement("img");
+                    img.src = images[i];
+                    gallery.appendChild(img);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

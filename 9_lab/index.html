@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №16</title>
+</head>
+<body>
+    <h1>Робота з вікнами</h1>
+
+    <!-- Кнопки -->
+    <button onclick="showMessage()">Натисни тут</button>
+    <button onclick="openNewWindow()">Відкрити вікно</button>
+    <button onclick="confirmMessage()">Перевірка</button>
+    <button onclick="promptMessage()">Введіть ім'я</button>
+
+    <!-- Фрейм -->
+    <h2>Фрейм із сайтом коледжу</h2>
+    <iframe src="https://itcollege.lviv.ua/" width="300" height="200"></iframe>
+
+    <!-- JavaScript -->
+    <script>
+        function showMessage() {
+            alert("Це спливаюче вікно.");
+        }
+
+        function openNewWindow() {
+            window.open("https://www.google.com", "_blank", "width=400,height=300");
+        }
+
+        function confirmMessage() {
+            let result = confirm("Ви впевнені?");
+            if (result) {
+                alert("Обрано OK.");
+            } else {
+                alert("Обрано Cancel.");
+            }
+        }
+
+        function promptMessage() {
+            let name = prompt("Як вас звати?");
+            alert("Вітаю, " + name + "!");
+        }
+    </script>
+</body>
+</html>

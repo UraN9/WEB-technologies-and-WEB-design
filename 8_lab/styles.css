@@ -1,0 +1,40 @@
+.sl_ctr {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 300px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.sldr {
+  position: relative;
+  width: 10000px;
+  height: 300px;
+}
+.sldr img {
+  float: left;
+  max-width: 100%;
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.prv_b, .nxt_b {
+  position: absolute;
+  top: 135px;
+  display: block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+.prv_b:hover, .nxt_b:hover {
+  opacity: .6;
+}
+.prv_b {
+  left: 10px;
+  background: url(./images) no-repeat;
+}
+.nxt_b {
+  right: 10px;
+  background: url(./images/) no-repeat;
+}

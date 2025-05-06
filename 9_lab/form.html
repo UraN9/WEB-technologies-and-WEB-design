@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма реєстрації</title>
+</head>
+<body>
+    <h2>Форма реєстрації</h2>
+    <form onsubmit="handleRegistration(event)">
+        <label>Ім'я: <input type="text" id="name"></label><br><br>
+        <label>Email: <input type="email" id="email"></label><br><br>
+        <label>Пароль: <input type="password" id="password"></label><br><br>
+        <button type="submit">Зареєструватися</button>
+    </form>
+
+    <script>
+        function handleRegistration(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+
+            if (!name || !email || !password) {
+                alert("Будь ласка, заповніть усі поля.");
+                return;
+            }
+
+            if (password.length < 6) {
+                alert("Пароль повинен містити щонайменше 6 символів.");
+                return;
+            }
+
+            alert(name + ", вітаємо! Ви успішно зареєстровані!");
+        }
+    </script>
+</body>
+</html>
